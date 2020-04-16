@@ -1,10 +1,10 @@
 # Creating myMovies Collection
-![](interns.png)
+![](images/interns.png)
 
 # Finding Documents in myMovies Collection
-![](findInterns1.png)
+![](images/findInterns1.png)
 
-![](findInterns2.png)
+![](images/findInterns2.png)
 
 # Updating myMovies Collection
-![](updateInterns.png)
+![](images/updateInterns.png)
