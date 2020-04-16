@@ -1,0 +1,37 @@
+var mongo = require ('mongodb');
+
+var MongoClient = require ('mongodb').MongoClient;
+
+var url = "mongodb://localhost:27017/Eloagbawe";
+
+// Create collection function
+function createCollection() { 
+  var createMoviesCollection = MongoClient.connect(url, {useUnifiedTopology: true},
+    function(err, db){
+      
+      if (err) throw err; 
+      
+      var mydb = db.db('Eloagbawe');
+
+      //Creating a collection called myMovies
+      
+      mydb.collection('myMovies').insertMany(
+        [{movie: "The Banker", year: "2020", rating: 8}, 
+        {movie: "Bad Boys", year: "2020", rating: 7},
+        {movie: "The Hunt", year: "2020", rating: 7},
+        {movie: "Bloodshot", year: "2020", rating: 7.5}, 
+        {movie: "First Cow", year: "2020", rating: 6.5} ],
+        function(err, res){
+          
+          if (err) throw err;
+          
+          console.log(res);
+          db.close();
+        });
+    });
+}
+
+// Calling the createCollection function
+createCollection(), function(err, res){
+    if (err) throw err;
+};
